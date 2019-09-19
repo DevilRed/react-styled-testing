@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import Header from './components/Header';
 import Profile from './components/Profile.js';
-// import GlobalStyle from './theme/globalStyle';
+import GlobalStyle from './theme/globalStyle';
 import theme from 'styled-theming';
 
 const boxBackgroundColor = theme('mode', {
@@ -16,10 +16,13 @@ const Box = styled.div`
 function App() {
   return (
   <ThemeProvider theme={{ mode: 'dark' }}>
+    <>
+    <GlobalStyle />
     <Box>
       <Header />
       <Profile />
     </Box>
+    </>
   </ThemeProvider>
   );
 }
