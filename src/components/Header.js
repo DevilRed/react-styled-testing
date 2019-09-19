@@ -16,21 +16,23 @@ const Nav = styled.div`
   background-color: ${navBg};
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
 `;
-const NavHeader = styled.div`
-  max-width: 1010px;
+// this is how to use styled WITH ANY FRAMEWORK, just add desired class to the attrs object and apply styles
+// https://medium.com/@pitipatdop/10-useful-tips-for-styled-components-b7710b021e6a
+const NavHeader = styled.div.attrs({
+    className: 'grid-x'
+  })`
   padding: 26px 20px;
-  width: 100%;
-  display: flex;
   align-items: center;
-  margin: 0 auto;
 `;
-const NavLeft = styled.div`
-  width: 33.333%;
+const NavLeft = styled.div.attrs({
+  className: 'cell small-12 medium-4'
+})`
   text-align: left;
   color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
 `;
-const NavCenter = styled.div`
-  width: 33.333%;
+const NavCenter = styled.div.attrs({
+  className: 'cell medium-4 small-12'
+})`
   text-align: center;
 `;
 const Input = styled.input`
@@ -51,11 +53,17 @@ const Input = styled.input`
     text-align: left;
   }
 `;
-const NavRight = styled.div`
-  width: 33.333%;
+const NavRight = styled.div.attrs({
+  className: 'cell small-12 medium-4'
+})`
   text-align: right;
   svg {
     margin-right: 20px;
+  }
+
+  @media (max-width: 500px) {
+    background: palevioletred;
+    text-align: center;
   }
 `;
 const MenuLink = styled.a`
