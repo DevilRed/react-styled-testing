@@ -1,12 +1,19 @@
 // Header.js
 import React from 'react';
 import styled from 'styled-components';
+import theme from 'styled-theming';
+
 
 // create and define styled elements (elements with styles) first, these components are going to be used to build the main component
 
 // The styled variable contains many functions representing all known HTML elements, this allows us to style heading tags, img tags e.t.c
+
+const navBg = theme('mode', {
+  light: '#fff',
+  dark: '#000'
+});
 const Nav = styled.div`
-  background-color: #fff;
+  background-color: ${navBg};
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
 `;
 const NavHeader = styled.div`
@@ -20,6 +27,7 @@ const NavHeader = styled.div`
 const NavLeft = styled.div`
   width: 33.333%;
   text-align: left;
+  color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
 `;
 const NavCenter = styled.div`
   width: 33.333%;
@@ -50,7 +58,11 @@ const NavRight = styled.div`
     margin-right: 20px;
   }
 `;
-const MenuLink = styled.a``;
+const MenuLink = styled.a`
+  color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
+  padding: 0 10px;
+  box-size: border-box;
+`;
 function Header() {
 	return (
 		<Nav>
