@@ -2,6 +2,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import SingleImage from './Image.js';
+import theme from 'styled-theming';
+
+// declare styles using the theme fn
+// preferred way to style
+const fontThemeColorInverse = theme('mode', {
+	// values are arbitrary
+	ligth: '#000',
+	dark: '#fff'
+});
 
 const feedsource = [
 	{
@@ -80,7 +89,7 @@ const ProfileDetailsUsername = styled.div`
 const EditProfileButton = styled.div`
   background-color: transparent;
   border: 1px solid #dbdbdb;
-  color: #262626;
+	color: ${fontThemeColorInverse};
   border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
@@ -89,11 +98,13 @@ const EditProfileButton = styled.div`
   font-size: 14px;
   margin-left: 20px;
 `;
+// alternative way to use styles regarding to props
 const HeadingThreeText = styled.h3`
 	color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
 `;
 const ParagraphText = styled.p`
-  margin-right: 25px;
+	margin-right: 25px;
+	color: ${fontThemeColorInverse};
 `;
 const ProfileDetailsMeta = styled.div`
   display: flex;
