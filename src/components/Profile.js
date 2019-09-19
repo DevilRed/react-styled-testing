@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SingleImage from './Image.js';
+
 const feedsource = [
 	{
 		source:
@@ -88,7 +89,9 @@ const EditProfileButton = styled.div`
   font-size: 14px;
   margin-left: 20px;
 `;
-const HeadingThreeText = styled.h3``;
+const HeadingThreeText = styled.h3`
+	color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
+`;
 const ParagraphText = styled.p`
   margin-right: 25px;
 `;
