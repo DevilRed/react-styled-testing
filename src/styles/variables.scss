@@ -9,3 +9,10 @@ $primary: #364495;
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
+
+// export scss to js
+// https://til.hashrocket.com/posts/sxbrscjuqu-share-scss-variables-with-javascript
+:export {
+	primary: $primary;
+	bodyColor: $body-color;
+}

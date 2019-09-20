@@ -2,15 +2,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
-
+import colorVariables from '../styles/variables.scss';
 
 // create and define styled elements (elements with styles) first, these components are going to be used to build the main component
 
 // The styled variable contains many functions representing all known HTML elements, this allows us to style heading tags, img tags e.t.c
 
 const navBg = theme('mode', {
-  light: '#fff',
-  dark: '#000'
+  light: colorVariables.bodyColor,
+  dark: colorVariables.primary
 });
 const Nav = styled.div.attrs({
   className: 'container'
