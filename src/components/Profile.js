@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SingleImage from './Image.js';
 import theme from 'styled-theming';
+import colorVariables from '../styles/variables.scss';
 
 // declare styles using the theme fn
 // preferred way to style
@@ -57,7 +58,8 @@ const feedsource = [
 const ProfileContainer = styled.div`
   max-width: 1010px;
   width: 100%;
-  margin: 20px auto;
+	margin: 20px auto;
+	background-color: ${props => (props.theme.mode === 'dark' ? colorVariables.primary : colorVariables.bodyColor)};
 `;
 const ProfileDetails = styled.div`
   display: flex;
@@ -120,7 +122,7 @@ const ImagesWrapper = styled.div`
 `;
 function Profile() {
 	return (
-		<ProfileContainer>
+		<ProfileContainer className="profile-container container">
 			<ProfileDetails>
 				<ProfileDetailsLeft>
 					<ProfileImage src="https://api.adorable.io/avatars/285/abott@adorable.png" />
