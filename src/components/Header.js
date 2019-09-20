@@ -12,25 +12,27 @@ const navBg = theme('mode', {
   light: '#fff',
   dark: '#000'
 });
-const Nav = styled.div`
+const Nav = styled.div.attrs({
+  className: 'container'
+})`
   background-color: ${navBg};
   border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
 `;
-const NavHeader = styled.div`
-  max-width: 1010px;
-  padding: 26px 20px;
-  width: 100%;
-  display: flex;
+const NavHeader = styled.div.attrs({
+  className: 'row'
+})`
   align-items: center;
   margin: 0 auto;
 `;
-const NavLeft = styled.div`
-  width: 33.333%;
+const NavLeft = styled.div.attrs({
+  className: 'col-4'
+})`
   text-align: left;
   color: ${props => (props.theme.mode === 'dark' ? '#fff' : '#000')};
 `;
-const NavCenter = styled.div`
-  width: 33.333%;
+const NavCenter = styled.div.attrs({
+  className: 'col-4'
+})`
   text-align: center;
 `;
 const Input = styled.input`
@@ -51,8 +53,9 @@ const Input = styled.input`
     text-align: left;
   }
 `;
-const NavRight = styled.div`
-  width: 33.333%;
+const NavRight = styled.div.attrs({
+  className: 'col-4'
+})`
   text-align: right;
   svg {
     margin-right: 20px;
