@@ -1,8 +1,9 @@
 // Header.js
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
 import colorVariables from '../styles/variables.scss';
+import { ThemeContext } from '../context/ThemeContext';
 
 // create and define styled elements (elements with styles) first, these components are going to be used to build the main component
 
@@ -67,10 +68,17 @@ const MenuLink = styled.a`
   box-size: border-box;
 `;
 function Header() {
+  const { toggleTheme } = useContext(ThemeContext);
 	return (
 		<Nav>
 			<NavHeader>
-				<NavLeft>Stylagram</NavLeft>
+        <NavLeft>
+          <h3>Stylagram</h3>
+          <div className="custom-control custom-switch">
+            <input type="checkbox" className="custom-control-input" id="customSwitch1" onClick={toggleTheme} />
+            <label className="custom-control-label" htmlFor="customSwitch1">Switch theme</label>
+          </div>
+        </NavLeft>
 				<NavCenter>
 					<Input type="text" placeholder="Search" />
 				</NavCenter>
