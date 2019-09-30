@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from 'styled-theming';
+import Button from '@material-ui/core/Button';
 
 
 // create and define styled elements (elements with styles) first, these components are going to be used to build the main component
@@ -72,15 +73,21 @@ function Header() {
 					<Input type="text" placeholder="Search" />
 				</NavCenter>
 				<NavRight>
-					<MenuLink href="#">
-						Compass
-					</MenuLink>
-					<MenuLink href="#">
-						Explore
-					</MenuLink>
-					<MenuLink href="#">
-						Avatar
-					</MenuLink>
+					<Button>
+            <MenuLink href="#">
+              Compass
+            </MenuLink>
+          </Button>
+					<Button>
+            <MenuLink href="#">
+              Explore
+            </MenuLink>
+          </Button>
+					<Button>
+            <MenuLink href="#">
+              Avatar
+            </MenuLink>
+          </Button>
 				</NavRight>
 			</NavHeader>
 		</Nav>

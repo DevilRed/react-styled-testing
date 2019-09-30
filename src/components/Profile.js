@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SingleImage from './Image.js';
 import theme from 'styled-theming';
+import Grid from '@material-ui/core/Grid';
 
 // declare styles using the theme fn
 // preferred way to style
@@ -148,11 +149,11 @@ function Profile() {
 					</ProfileDetailsName>
 				</ProfileDetailsRight>
 			</ProfileDetails>
-			<ImagesWrapper>
+			<Grid container>
 				{feedsource.map(item => (
 					<SingleImage image={item} key={item.id} />
 				))}
-			</ImagesWrapper>
+			</Grid>
 		</ProfileContainer>
 	);
 }

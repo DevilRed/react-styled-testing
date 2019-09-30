@@ -5,24 +5,28 @@ import Profile from './components/Profile.js';
 import GlobalStyle from './theme/globalStyle';
 import theme from 'styled-theming';
 
+import Grid from '@material-ui/core/Grid';
+// import { createMuiTheme } from '@material-ui/styles';
+
 const boxBackgroundColor = theme('mode', {
   light: '#fff',
   dark: '#000',
 });
 const Box = styled.div`
   background-color: ${boxBackgroundColor};
+  width: 100%;
 `;
 
 function App() {
   return (
   <ThemeProvider theme={{ mode: 'dark' }}>
-    <>
-    <GlobalStyle />
-    <Box>
-      <Header />
-      <Profile />
-    </Box>
-    </>
+    <Grid container direction="row" spacing={2}>
+      <GlobalStyle />
+      <Box>
+        <Header />
+        <Profile />
+      </Box>
+    </Grid>
   </ThemeProvider>
   );
 }
